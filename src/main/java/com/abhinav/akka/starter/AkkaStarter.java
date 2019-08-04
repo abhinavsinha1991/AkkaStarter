@@ -14,6 +14,9 @@ public class AkkaStarter {
         ActorRef sampleActor=actorSystem.actorOf(Props.create(SampleActor.class));
 
         sampleActor.tell("Hello World",sampleActor);
+        sampleActor.tell(Integer.valueOf(50),ActorRef.noSender());
+
+        actorSystem.terminate();
 
 
     }
